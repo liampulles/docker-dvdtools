@@ -14,7 +14,6 @@ rm `echo VTS*.VOB`
 mv JOINED.VOB "$BASE"_1.VOB
 FINAL="$(realpath .)"
 cd ../../..
-mkdir /out/"title_$TITLE"
-mv "$FINAL"/* /out/"title_$TITLE"
+mv "$FINAL"/* /out
 rm -r "extract_$TITLE"
-chmod a+rw /out/"title_$TITLE"/*.*
+chmod a+rw /out/*.*
