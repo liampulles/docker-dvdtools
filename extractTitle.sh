@@ -2,8 +2,8 @@
 TITLE="$1"
 IN="$2"
 OUT="$3"
-mkdir "extract_$TITLE"
-cd "extract_$TITLE"
+mkdir -p "$OUT"/extract
+cd "$OUT"/extract
 dvdbackup -n dvd -t "$TITLE" -i "$IN" -o .
 cd ./*/VIDEO_TS
 FIRST_VOB=$(echo *.VOB | cut -f 1 -d ' ')
@@ -16,5 +16,5 @@ mv JOINED.VOB VTS_01_1.VOB
 FINAL="$(realpath .)"
 cd ../../..
 mv "$FINAL"/* "$OUT"
-rm -r "extract_$TITLE"
+rm -r extract
 chmod a+rw "$OUT"/*.*

@@ -18,6 +18,6 @@ RUN groupadd -g 1000 dvduser && \
     mkdir -p /in && \
     mkdir -p /wip && \
     chown --recursive 1000:1000 /sh /out /in /wip
-USER dvduser
-WORKDIR /wip
+#USER dvduser
+WORKDIR /out
 COPY *.sh /sh
